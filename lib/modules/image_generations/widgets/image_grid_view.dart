@@ -22,6 +22,7 @@ class ImageGridView extends StatelessWidget {
             );
           case Status.success:
             return GridView.count(
+              physics: const NeverScrollableScrollPhysics(),
               crossAxisCount: 2,
               mainAxisSpacing: 5,
               crossAxisSpacing: 5,

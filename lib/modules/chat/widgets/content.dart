@@ -24,8 +24,7 @@ class Content extends StatelessWidget {
                 ),
                 const SizedBox(width: 8),
                 Expanded(
-                    child:
-                        SelectableText(chat.message, style: kContentTextStyle)),
+                    child: SelectableText(chat.message, style: k16TextStyle)),
               ],
             ),
           ),

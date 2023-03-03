@@ -57,6 +57,7 @@ class _DownloadStatusIcon extends StatelessWidget {
         return LottieBuilder.asset(
           'assets/lotties/download.json',
           repeat: false,
+          animate: false,
         );
       case Status.working:
         return LottieBuilder.asset('assets/lotties/loading.json');

@@ -43,7 +43,7 @@ class _ChatViewState extends State<ChatView>
                           animatedTexts: [
                             TypewriterAnimatedText(
                               '對方正在輸入中',
-                              textStyle: kContentTextStyle,
+                              textStyle: k16TextStyle,
                               speed: const Duration(milliseconds: 100),
                             ),
                           ],

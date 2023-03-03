@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_chat_gpt/const/const.dart';
 import '/modules/chat/views/chat_view.dart';
 import '../../image_generations/views/image_generations_view.dart';
 import '/utils/asset_manager.dart';
@@ -20,7 +21,15 @@ class HomeTabView extends StatelessWidget {
               child: Image.asset(AssetManager.openaiLogo),
             ),
             title: const Text("Open AI Tool"),
-            bottom: const TabBar(tabs: [Tab(text: "Chat"), Tab(text: "Image")]),
+            bottom: const TabBar(
+              indicatorColor: kButtonColor,
+              indicatorSize: TabBarIndicatorSize.label,
+              labelStyle: k18TextStyle,
+              tabs: [
+                Tab(text: "Chat"),
+                Tab(text: "Image"),
+              ],
+            ),
           ),
           body: const SafeArea(
             child: TabBarView(

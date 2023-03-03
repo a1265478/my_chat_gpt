@@ -16,11 +16,12 @@ class _ImageGenerationsViewState extends State<ImageGenerationsView>
     super.build(context);
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+        padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Column(
           children: const [
-            ImageSizeComboBox(),
-            SizedBox(height: 5),
+            SizedBox(height: 15),
+            SizeRadiusButton(),
+            SizedBox(height: 15),
             DescriptionTextArea(),
             SizedBox(height: 5),
             GeneratorButton(),
