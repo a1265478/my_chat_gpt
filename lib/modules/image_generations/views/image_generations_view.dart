@@ -26,7 +26,7 @@ class _ImageGenerationsViewState extends State<ImageGenerationsView>
             SizedBox(height: 5),
             GeneratorButton(),
             SizedBox(height: 10),
-            Expanded(child: ImageGridView()),
+            Flexible(child: ImageGridView()),
           ],
         ),
       ),
