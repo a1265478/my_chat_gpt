@@ -1,5 +1,7 @@
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:my_chat_gpt/const/enum.dart';
 import '../cubit/chat_cubit.dart';
 import '/modules/chat/widgets/widgets.dart';
 import '/const/const.dart';
@@ -31,8 +33,23 @@ class _ChatViewState extends State<ChatView>
               return Flexible(
                 child: ListView.builder(
                   itemCount: state.chatList.length,
-                  itemBuilder: (context, index) =>
+                  itemBuilder: (context, index) => Column(
+                    children: [
                       Content(chat: state.chatList[index]),
+                      if (state.responseStatus == Status.working &&
+                          index == state.chatList.length - 1)
+                        AnimatedTextKit(
+                          repeatForever: true,
+                          animatedTexts: [
+                            TypewriterAnimatedText(
+                              '對方正在輸入中',
+                              textStyle: kContentTextStyle,
+                              speed: const Duration(milliseconds: 100),
+                            ),
+                          ],
+                        ),
+                    ],
+                  ),
                 ),
               );
             },

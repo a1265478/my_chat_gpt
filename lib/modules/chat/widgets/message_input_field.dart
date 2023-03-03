@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:my_chat_gpt/const/enum.dart';
 import 'package:my_chat_gpt/modules/chat/cubit/chat_cubit.dart';
 
 class MessageInputField extends StatefulWidget {
@@ -31,18 +32,25 @@ class _MessageInputFieldState extends State<MessageInputField> {
             hintStyle: TextStyle(
               color: Colors.grey,
             ),
+            border: InputBorder.none,
           ),
         )),
-        IconButton(
-          onPressed: () {
-            BlocProvider.of<ChatCubit>(context)
-                .sendMessage(textEditingController.text);
-            textEditingController.clear();
+        BlocBuilder<ChatCubit, ChatState>(
+          builder: (context, state) {
+            return IconButton(
+              onPressed: () {
+                if (textEditingController.text.isEmpty) return;
+                if (state.responseStatus == Status.working) return;
+                BlocProvider.of<ChatCubit>(context)
+                    .sendMessage(textEditingController.text);
+                textEditingController.clear();
+              },
+              icon: const Icon(
+                Icons.send,
+                color: Colors.white,
+              ),
+            );
           },
-          icon: const Icon(
-            Icons.send,
-            color: Colors.white,
-          ),
         ),
       ],
     );
