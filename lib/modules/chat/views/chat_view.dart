@@ -11,7 +11,8 @@ class ChatView extends StatefulWidget {
   State<ChatView> createState() => _ChatViewState();
 }
 
-class _ChatViewState extends State<ChatView> {
+class _ChatViewState extends State<ChatView>
+    with AutomaticKeepAliveClientMixin {
   late TextEditingController textEditingController;
   @override
   void initState() {
@@ -21,6 +22,7 @@ class _ChatViewState extends State<ChatView> {
 
   @override
   Widget build(BuildContext context) {
+    super.build(context);
     return Scaffold(
       body: Column(
         children: [
@@ -47,4 +49,7 @@ class _ChatViewState extends State<ChatView> {
       ),
     );
   }
+
+  @override
+  bool get wantKeepAlive => true;
 }
