@@ -2,16 +2,16 @@ part of 'chat_cubit.dart';
 
 class ChatState extends Equatable {
   final List<Chat> chatList;
-  final ApiStatus responseStatus;
+  final Status responseStatus;
 
   const ChatState({
     this.chatList = const [],
-    this.responseStatus = ApiStatus.init,
+    this.responseStatus = Status.init,
   });
 
   ChatState copyWith({
     List<Chat>? chatList,
-    ApiStatus? responseStatus,
+    Status? responseStatus,
   }) {
     return ChatState(
       chatList: chatList ?? this.chatList,

@@ -23,12 +23,13 @@ class HomeTabView extends StatelessWidget {
             bottom: const TabBar(tabs: [Tab(text: "Chat"), Tab(text: "Image")]),
           ),
           body: const SafeArea(
-              child: TabBarView(
-            children: [
-              ChatView(),
-              ImageGenerationsView(),
-            ],
-          )),
+            child: TabBarView(
+              children: [
+                ChatView(),
+                ImageGenerationsView(),
+              ],
+            ),
+          ),
         ),
       ),
     );

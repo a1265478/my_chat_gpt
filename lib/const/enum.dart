@@ -1,4 +1,4 @@
-enum ApiStatus {
+enum Status {
   init,
   working,
   success,

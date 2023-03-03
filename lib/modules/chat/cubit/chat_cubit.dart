@@ -14,14 +14,14 @@ class ChatCubit extends Cubit<ChatState> {
     try {
       emit(
         state.copyWith(
-            responseStatus: ApiStatus.working,
+            responseStatus: Status.working,
             chatList: List.from(state.chatList)
               ..add(Chat(isBot: false, message: message))),
       );
       final response = await ApiService.sendMessage(message);
       emit(
         state.copyWith(
-            responseStatus: ApiStatus.success,
+            responseStatus: Status.success,
             chatList: List.from(state.chatList)..addAll(response)),
       );
     } catch (_) {}
