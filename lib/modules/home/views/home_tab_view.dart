@@ -19,7 +19,7 @@ class HomeTabView extends StatelessWidget {
               padding: const EdgeInsets.all(8),
               child: Image.asset(AssetManager.openaiLogo),
             ),
-            title: const Text("ChatGPT"),
+            title: const Text("Open AI Tool"),
             bottom: const TabBar(tabs: [Tab(text: "Chat"), Tab(text: "Image")]),
           ),
           body: const SafeArea(

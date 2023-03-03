@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import '/modules/chat/models/chat.dart';
-import '/modules/chat/widgets/widgets.dart';
 import '/const/const.dart';
 import '/utils/asset_manager.dart';
 
@@ -24,8 +23,9 @@ class Content extends StatelessWidget {
                   height: 30,
                 ),
                 const SizedBox(width: 8),
-                Expanded(child: Text(chat.message, style: kContentTextStyle)),
-                chat.isBot ? const SurveyButton() : const SizedBox.shrink(),
+                Expanded(
+                    child:
+                        SelectableText(chat.message, style: kContentTextStyle)),
               ],
             ),
           ),
