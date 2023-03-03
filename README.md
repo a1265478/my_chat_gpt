@@ -4,3 +4,7 @@
 ## 環境變數
 * BASE_URI (Open AI BASE_URI)
 * API_KEY (Open AI Key)
+
+## DEMO
+![GITHUB]( demo/Chat.png "Chat")
+![GITHUB]( demo/Image_generation.png "Image generation")
