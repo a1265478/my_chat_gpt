@@ -38,10 +38,11 @@ dependencies:
   cupertino_icons: ^1.0.2
   flutter_spinkit:
   http:
-  provider:
+  flutter_bloc:
   animated_text_kit:
   flutter_dotenv:
   hive_flutter:
+  equatable:
 
 dev_dependencies:
   flutter_test:

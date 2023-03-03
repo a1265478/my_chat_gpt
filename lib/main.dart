@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:my_chat_gpt/modules/chat/cubit/chat_cubit.dart';
 import '/const/const.dart';
+import 'modules/home/views/home_tab_view.dart';
 import 'utils/enviroment.dart';
-import 'modules/chat/views/chat_view.dart';
 
 void main() async {
   await dotenv.load(fileName: Enviroment.fileName);
@@ -22,7 +24,12 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: kScaffoldBackgroundColor,
         appBarTheme: const AppBarTheme(color: kCardColor),
       ),
-      home: const ChatView(),
+      home: MultiBlocProvider(
+        providers: [
+          BlocProvider(create: (context) => ChatCubit()),
+        ],
+        child: const HomeTabView(),
+      ),
     );
   }
 }
